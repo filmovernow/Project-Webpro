@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    background-color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    color: white;
+    padding-top: 10px;
+    padding-left: 2vw;
+}
+
+.tagslist {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    list-style-type: none;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.tagitem {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #3e3e3e;
+    color: white;
+    padding: 10%;
+    border-radius: 10px;
+    height: clamp(50px, 10vw, 100px);
+    font-size: clamp(14px, 2vw, 25px);
+}
+
+@media (max-width: 480px) {
+
+.tagslist {
+    grid-template-columns: 1fr 1fr;
+}
+
+}
