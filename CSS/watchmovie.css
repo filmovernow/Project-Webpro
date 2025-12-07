@@ -1,0 +1,141 @@
+body{
+    background-color: black;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.headtext{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(70px, 7vw, 70px);
+    font-weight: normal;
+    margin-left: 20vh;
+    margin-top: -30px;
+}
+.movieplayer{
+    display: block;
+    width: 1280px;
+    height: 720px;
+    margin: -40px auto;
+}
+section p{
+    position: relative;
+    display: block;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(50px, 7vw, 50px);
+    font-weight: normal;
+    margin-left: 20vh;
+    padding-top: 20px;
+}
+.ratingswrap .imgstar{
+    padding: 0;
+    margin: 0;
+    width: 6vh;
+    height: 6vh;
+}
+.ratingswrap{
+    margin-left: 20vh;
+    margin-top: -3vh;
+    padding-top: 0;
+}
+section .rectext {
+    position: relative;
+    display: block;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(50px, 7vw, 50px);
+    font-weight: normal;
+    margin-left: 20vh;
+    padding-top: 40px;
+}
+.recmov {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vw;
+    margin-top: 2vh;
+}
+.footerbox {
+    margin-top: 10vh;
+    width: 100%;
+    height: 64px;
+    background: rgba(35, 35, 35, 0.8);
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+    .headtext{
+        font-size: clamp(40px, 7vw, 40px);
+        margin-left: 6vh;
+        margin-top: -20px;
+    }
+    .movieplayer{
+        display: block;
+        width: 80%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 0px auto;
+    }
+    section p{
+        font-size: clamp(30px, 7vw, 30px);
+        margin-left: 6vh;
+        margin-top: 5px;
+    }
+    .ratingswrap .imgstar{
+        width: 6vh;
+        height: 6vh;
+    }
+    .ratingswrap{
+        margin-left: 6vh;
+        padding-top: 0;
+    }
+    section .rectext {
+        font-size: clamp(30px, 7vw, 30px);
+        margin-left: 6vh;
+        margin-top: 5px;
+    }
+    .recmov {
+       gap: 5vw;
+    }
+    .moviepicture {
+        width: 25vw;
+    }
+
+}
+@media (max-width: 480px) {
+    .headtext{
+        font-size: clamp(40px, 7vw, 40px);
+        margin-left: 2vh;
+        margin-top: -20px;
+    }
+    .movieplayer{
+        display: block;
+        width: 80%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 0px auto;
+    }
+    section p{
+        font-size: clamp(30px, 7vw, 30px);
+        margin-left: 2vh;
+        margin-top: 5px;
+    }
+    .ratingswrap .imgstar{
+        width: 4vh;
+        height: 4vh;
+    }
+    .ratingswrap{
+        margin-left: 2vh;
+        padding-top: 0;
+    }
+    section .rectext {
+        font-size: clamp(30px, 7vw, 30px);
+        margin-left: 2vh;
+        margin-top: 5px;
+    }
+    .recmov {
+        gap: 5vw;
+    }
+    .moviepicture {
+        width: 40vw;
+        }  
+}
