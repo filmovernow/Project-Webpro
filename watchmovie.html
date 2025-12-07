@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JS/navbar.js" defer></script>
+    <link rel="stylesheet" href="CSS/navstyle.css">
+    <title>WatchMovie</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        .headtext{
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(70px, 7vw, 70px);
+            font-weight: normal;
+            margin-left: 20vh;
+            margin-top: -30px;
+        }
+        .movieplayer{
+            display: block;
+            width: 1280px;
+            height: 720px;
+            margin: -40px auto;
+        }
+        section p{
+            position: relative;
+            display: block;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(50px, 7vw, 50px);
+            font-weight: normal;
+            margin-left: 20vh;
+            padding-top: 20px;
+        }
+        .ratingswrap .imgstar{
+            padding: 0;
+            margin: 0;
+            width: 6vh;
+            height: 6vh;
+        }
+        .ratingswrap{
+            margin-left: 20vh;
+            margin-top: -3vh;
+            padding-top: 0;
+        }
+        section .rectext {
+            position: relative;
+            display: block;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(50px, 7vw, 50px);
+            font-weight: normal;
+            margin-left: 20vh;
+            padding-top: 40px;
+        }
+        .recmov {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3vw;
+            margin-top: 2vh;
+        }
+        .footerbox {
+            margin-top: 10vh;
+            width: 100%;
+            height: 64px;
+            background: rgba(35, 35, 35, 0.8);
+        }
+        @media (max-width: 1024px) and (min-width: 481px) {
+            .headtext{
+            font-size: clamp(40px, 7vw, 40px);
+            margin-left: 6vh;
+            margin-top: -20px;
+            }
+            .movieplayer{
+            display: block;
+            width: 80%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            margin: 0px auto;
+            }
+            section p{
+            font-size: clamp(30px, 7vw, 30px);
+            margin-left: 6vh;
+            margin-top: 5px;
+            }
+            .ratingswrap .imgstar{
+                width: 6vh;
+                height: 6vh;
+            }
+            .ratingswrap{
+                margin-left: 6vh;
+                padding-top: 0;
+            }
+            section .rectext {
+                font-size: clamp(30px, 7vw, 30px);
+                margin-left: 6vh;
+                margin-top: 5px;
+            }
+
+            .recmov {
+                gap: 5vw;
+            }
+            .moviepicture {
+                width: 25vw;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+        
+        .headtext{
+            font-size: clamp(40px, 7vw, 40px);
+            margin-left: 2vh;
+            margin-top: -20px;
+        }
+        .movieplayer{
+            display: block;
+            width: 80%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            margin: 0px auto;
+        }
+        section p{
+            font-size: clamp(30px, 7vw, 30px);
+            margin-left: 2vh;
+            margin-top: 5px;
+        }
+        .ratingswrap .imgstar{
+            width: 4vh;
+            height: 4vh;
+        }
+        .ratingswrap{
+            margin-left: 2vh;
+            padding-top: 0;
+        }
+        section .rectext {
+            font-size: clamp(30px, 7vw, 30px);
+            margin-left: 2vh;
+            margin-top: 5px;
+        }
+
+        .recmov {
+            gap: 5vw;
+        }
+        .moviepicture {
+            width: 40vw;
+        }  
+        }
+    </style>
+        
+</head>
+<body>
+    <nav class="navbar">
+        <a href="landing.html"><img class="logo" src="IMAGES/logo.png" alt="LOGO"></a>
+
+        <ul class="menu">
+            <li><a href="moviepage.html">Home</a></li>
+            <li><a href="tag.html">Tags</a></li>
+        </ul>
+
+        <div class="searcharea">
+            <input class="searchbar" type="text" placeholder="Search...">
+            <button class="searchbtn">
+                <img class="search" src="IMAGES/search.png" alt="Search">
+            </button>
+        </div>
+
+        <div class="profile-wrapper">
+            <img class="profile" src="IMAGES/profile.png" alt="PROFILE">
+
+            <ul class="dropdown">
+                <li><a href="basket.html">Basket</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="headtext">
+            <p>Movie title</p>
+        </header>
+        <video class="movieplayer" controls>
+            <source src="MOVIES/samplemovie.mp4" type="video/mp4">
+        </video>
+        
+        <section>
+            <p class="ratingscore">Add your rating</p>
+                <div class="ratingswrap">
+                        <img class="imgstar" src="IMAGES/fullstar.png">
+                        <img class="imgstar" src="IMAGES/fullstar.png">
+                        <img class="imgstar" src="IMAGES/fullstar.png">
+                        <img class="imgstar" src="IMAGES/halfstar.png">
+                        <img class="imgstar" src="IMAGES/clearstar.png">                    
+                </div>
+            <p class="rectext">Movie Recommendations</p>
+                <div class="recmov">
+                    <img class="moviepicture" src="IMAGES\movie1.png">
+                    <img class="moviepicture" src="IMAGES\movie1.png">
+                    <img class="moviepicture" src="IMAGES\movie1.png">
+                    <img class="moviepicture" src="IMAGES\movie1.png">
+                    <img class="moviepicture" src="IMAGES\movie1.png">
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footerbox"></div>
+    </footer>
+</body>
+</html>

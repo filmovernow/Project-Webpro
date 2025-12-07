@@ -1,0 +1,56 @@
+<?php
+
+$open_connect = 1;
+require('connect.php');
+
+if(isset($_POST['username']) && isset($_POST['email']) 
+    && isset($_POST['password1']) && isset($_POST['password2']))
+{
+    $username = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['username']));
+    $email = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['email']));
+    $password1 = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['password1']));
+    $password2 = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['password2']));
+
+    if(empty($username)){
+        die(header('Location: register.php')); //คุณไม่ได้กรอกชื่อผู้ใช้
+    }elseif(empty($email)){
+        die(header('Location: register.php')); //คุณไม่ได้กรอกอีเมล
+    }elseif(empty($password1)){
+        die(header('Location: register.php')); //คุณไม่ได้กรอกรหัสผ่าน
+    }elseif(empty($password2)){
+        die(header('Location: register.php')); //คุณไม่ได้กรอกการยืนยันรหัสผ่าน
+    }elseif($password1 != $password2){
+        die(header('Location: register.php')); //กรุณายืนยันรหัสผ่านให้ถูกต้อง
+    }else{
+        $query_check_email_account = "SELECT email FROM customer WHERE email = '$email'";
+        $query_check_username_account = "SELECT username FROM customer WHERE username = '$username'";
+        $call_back_query_check_email_account = mysqli_query($connect, $query_check_email_account);
+        $call_back_query_check_username_account = mysqli_query($connect, $query_check_username_account);
+        if(mysqli_num_rows($call_back_query_check_email_account) > 0){
+            die(header('Location: register.php')); //มีผู้ใช้อีเมลนี้แล้ว
+        }elseif(mysqli_num_rows($call_back_query_check_username_account) > 0){
+            die(header('Location: register.php')); //มีผู้ใช้อีเมลนี้แล้ว
+        }else{
+            $algo = PASSWORD_ARGON2ID;
+            $options = [
+            'cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+            'time_cost' => PASSWORD_ARGON2_DEFAULT_TIME_COST,
+            'threads' => PASSWORD_ARGON2_DEFAULT_THREADS
+            ];
+            $password_account = password_hash($password1, $algo, $options); //นำรหัสผ่านที่ต่อกับค่าเกลือแล้ว เข้ารหัสด้วยวิธี ARGON2ID
+            $query_create_account = "INSERT INTO customer VALUES('', '$username', '$password_account', '$email')";
+            $call_back_create_account = mysqli_query($connect, $query_create_account);
+            if($call_back_create_account){
+                die(header('Location: login.php')); //สร้างบัญชีสำเร็จ
+            }else{
+                die(header('Location: register.php')); //สร้างบัญชีล้มเหลว
+            }
+        }
+    }
+}
+else
+{
+    die(header('Location: register.php'));
+}
+
+?>
