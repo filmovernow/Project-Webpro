@@ -12,31 +12,7 @@
 </head>
 
 <body> 
-    <nav class="navbar">
-        <a href="landing.html"><img class="logo" src="IMAGES/logo.png" alt="LOGO"></a>
-
-        <ul class="menu">
-            <li><a href="moviepage.html">Home</a></li>
-            <li><a href="tag.html">Tags</a></li>
-        </ul>
-
-        <div class="searcharea">
-            <input class="searchbar" type="text" placeholder="Search...">
-            <button class="searchbtn">
-                <img class="search" src="IMAGES/search.png" alt="Search">
-            </button>
-        </div>
-
-        <div class="profile-wrapper">
-            <img class="profile" src="IMAGES/profile.png" alt="PROFILE">
-
-            <ul class="dropdown">
-                <li><a href="basket.html">Basket</a></li>
-                <li><a href="inventory.html">Inventory</a></li>
-                <li><a href="logout.html">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include "navbar.php"; ?>
     
     <main class="container">
         <div class="nameweb"><h1>ONE <br class="h1break">BY <br class="h1break">ONE</h1></div>

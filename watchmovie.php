@@ -3,38 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="JS/navbar.js" defer></script>
-    <link rel="stylesheet" href="CSS/watchmovie.css">
     <link rel="stylesheet" href="CSS/navstyle.css">
+    <link rel="stylesheet" href="CSS/watchmovie.css">
+    <script src="JS/navbar.js" defer></script>
     <title>WatchMovie</title>
         
 </head>
 <body>
-    <nav class="navbar">
-        <a href="landing.html"><img class="logo" src="IMAGES/logo.png" alt="LOGO"></a>
-
-        <ul class="menu">
-            <li><a href="moviepage.html">Home</a></li>
-            <li><a href="tag.html">Tags</a></li>
-        </ul>
-
-        <div class="searcharea">
-            <input class="searchbar" type="text" placeholder="Search...">
-            <button class="searchbtn">
-                <img class="search" src="IMAGES/search.png" alt="Search">
-            </button>
-        </div>
-
-        <div class="profile-wrapper">
-            <img class="profile" src="IMAGES/profile.png" alt="PROFILE">
-
-            <ul class="dropdown">
-                <li><a href="basket.html">Basket</a></li>
-                <li><a href="inventory.html">Inventory</a></li>
-                <li><a href="logout.html">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include "navbar.php"; ?>
 
     <main>
         <header class="headtext">
