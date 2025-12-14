@@ -9,6 +9,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+
 .nameweb {
     width: 100%;
     display: flex;
@@ -49,28 +50,51 @@ body::-webkit-scrollbar {
     padding-top: clamp(50px, 5vh, 100px);
 }
 
-.moviecardwrapper {
+.moviecardwrapper { 
     display: flex;
-    flex-wrap: wrap;
+    gap: 15px;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 20px;
     justify-content: center;
-    gap: 3vw;
-    margin-top: 2vh;
-    height: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.moviecardwrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.moviecardwrapper::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+.moviecardwrapper::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
 }
 
 .moviecard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: clamp(120px, 15vw, 200px);
-    margin-bottom: 50px;
+    flex-shrink: 0;
+    min-width: 150px;
+    max-width: 180px;
+    width: 100%;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    margin-bottom: 0;
 }
 
-.moviecard img {
+.moviecard .moviepicture {
     width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+    height: 250px;
+    border-radius: 4px;
     display: block;
+    object-fit: cover;
+    margin: 0 auto;
 }
 
 .movietitle {
@@ -94,7 +118,30 @@ body::-webkit-scrollbar {
     background: rgba(35, 35, 35, 0.8);
 } */
 
+@media (max-width: 1300px) {
+
+    .moviecardwrapper{
+        width: 100%;
+    }
+
+    .moviecard { 
+        min-width: 150px;
+        max-width: 150px;
+    }
+
+    .moviecard .moviepicture { 
+        height: 225px;
+    }
+}
+
 @media (max-width: 1023px) and (min-width: 481px) {
+
+    .moviecardwrapper{
+        width: 75%;
+        justify-content: flex-start;
+        padding: 0 5%;
+    }
+
     .container {
         flex-direction: column;
         align-items: center;
@@ -144,19 +191,22 @@ body::-webkit-scrollbar {
         margin-top: 2vh;
     }
 
-    .moviecardwrapper {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 4vh;
+    .moviecardwrapper{
+        justify-content: flex-start;
+        padding-left: 5%;
     }
 
-    .moviecardwrapper img {
-        width: 80vw;
-        max-width: 150px;
+    .moviecard {
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+    .moviecard .moviepicture {
+        height: 150px;
     }
 
     .h1break {
         display: none;
     }
+
 }
