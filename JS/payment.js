@@ -1,78 +1,53 @@
-const radios = document.querySelectorAll('input[name="payment"]');
+document.addEventListener("DOMContentLoaded", () => 
+{
+    const radios = document.querySelectorAll('input[name="paymentmethod"]'); 
+    const truemoneyForm = document.querySelector(".truemoneyform");
+    const promptpayForm = document.querySelector(".promptpayform");
+    const creditCardForm = document.querySelector(".creditcardform");
 
-radios.forEach(r => {
-    r.addEventListener("change", () => {
-        document.getElementById("truemoney-form").style.display = "none";
-        document.getElementById("promptpay-form").style.display = "none";
-        document.getElementById("credit-card-form").style.display = "none";
+    if (!truemoneyForm || !promptpayForm || !creditCardForm) {
+        console.error("Payment form elements not found.");
+        return;
+    }
 
-        if (r.value === "truemoney") document.getElementById("truemoney-form").style.display = "block";
-        if (r.value === "promptpay") document.getElementById("promptpay-form").style.display = "block";
-        if (r.value === "credit-card") document.getElementById("credit-card-form").style.display = "block";
+    function hideAllForms() {
+        document.querySelectorAll(".paymentform").forEach(form => {
+            form.classList.add("hidden");
+        });
+    }
+
+    function showSelectedForm(selectedValue) {
+        hideAllForms();
+
+        switch (selectedValue) {
+            case "truemoney":
+                truemoneyForm.classList.remove("hidden");
+                break;
+            case "promptpay":
+                promptpayForm.classList.remove("hidden");
+                break;
+            case "credit card":
+                creditCardForm.classList.remove("hidden");
+                break;
+            default:
+                creditCardForm.classList.remove("hidden"); 
+                break;
+        }
+    }
+
+    radios.forEach(radio => {
+        radio.addEventListener("change", (event) => {
+            showSelectedForm(event.target.value);
+        });
     });
-});
 
-document.querySelector("#truemoney-form .summit").addEventListener("click", () => {
-    const phone = document.getElementById("tel-number").value.trim();
-    const agree = document.getElementById("checkterm").checked;
-
-    if (phone.length !== 10 || isNaN(phone)) {
-        alert("Please enter a valid phone number (10 digits).");
-        return;
-    }
-    if (!agree) {
-        alert("Please accept the terms and conditions before proceeding.");
-        return;
-    }
-    alert("Truemoney payment submitted successfully.")
-});
-
-document.querySelector("#promptpay-form .summit").addEventListener("click", () => {
-    const agree = document.getElementById("checkterm2").checked;
-
-    if (!agree) {
-        alert("Please accept the terms and conditions before proceeding.");
-        return;
-    }
-    alert("Promptpay payment submitted successfully.")
-});
-
-document.querySelector("#credit-card-form .summit").addEventListener("click", () => {
-    const card = document.getElementById("tel-number2").value.trim();
-    const name = document.getElementById("tel-number3").value.trim();
-    const month = document.getElementById("tel-number4").value.trim();
-    const year = document.getElementById("tel-number5").value.trim();
-    const cvv = document.getElementById("tel-number6").value.trim();
-    const agree = document.getElementById("checkterm3").checked;
-
-    if (card.length !== 16 || isNaN(card)) {
-        alert("Please enter a valid 16-digit card number.");
-        return;
+    const selectedRadio = document.querySelector('input[name="paymentmethod"]:checked');
+    if (selectedRadio) {
+        showSelectedForm(selectedRadio.value);
+    } 
+    else 
+    {
+        showSelectedForm("credit card");
     }
 
-    if (name === "") {
-        alert("Please enter the cardholder name.");
-        return;
-    }
-
-    if (month.length !== 2 || isNaN(month) || +month < 1 || + month > 12) {
-        alert("Please enter a valid expiration month (01–12).");
-        return;
-    }
-
-    if (year.length !== 2 || isNaN(year)) {
-        alert("Please enter a valid expiration year (e.g., 28).");
-        return;
-    }
-
-    if (cvv.length !== 3 || isNaN(cvv)) {
-        alert("Please enter a valid 3-digit CVV.");
-        return;
-    }
-
-    if (!agree) {
-        alert("Please accept the terms and conditions before proceeding.");
-        return;
-    }
-    alert("Credit card payment submitted successfully.")
 });

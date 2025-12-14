@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.querySelector(".dropdown");
     const navbar = document.querySelector(".navbar");
 
+    let lastScrollY = window.scrollY;
+    
     profile.addEventListener("click", () => {
         dropdown.style.display =
             dropdown.style.display === "flex" ? "none" : "flex";
@@ -15,11 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 10) {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 64) {
             navbar.classList.add("scrolled");
-        } else {
+        } 
+        
+        else if (currentScrollY < lastScrollY || currentScrollY < 64) {
             navbar.classList.remove("scrolled");
         }
+
+        lastScrollY = currentScrollY;
     });
     
 });

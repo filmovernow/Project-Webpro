@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="CSS/navstyle.css">
     <link rel="stylesheet" href="CSS/landingstyle.css">
     <script src="JS/navbar.js" defer></script>
-    <script src="JS/landing.js" defer></script>
     <title>LandingPage</title>
 </head>
 
@@ -18,29 +17,50 @@
         <div class="nameweb"><h1>ONE <br class="h1break">BY <br class="h1break">ONE</h1></div>
         <div class="image">
             <div class="bannercontainer">
-                <img class="banner" src="IMAGES/banner1.jpg">
-                    <div class="circlewrapper">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                    </div>
+                <img class="banner" src="IMAGES/banner1.png">
             </div>
         </div>    
     </main>
     
     <section>
         <p class="text">What's new</p>
-        <div class="moviepicturewrapper">
-            <img class="moviepicture" src="IMAGES\movie1.png">
-            <img class="moviepicture" src="IMAGES\movie1.png">
-            <img class="moviepicture" src="IMAGES\movie1.png">
-            <img class="moviepicture" src="IMAGES\movie1.png">
-            <img class="moviepicture" src="IMAGES\movie1.png">
+        <div class="moviecardwrapper">
+            <?php
+                require('connect.php');
+
+                $query_new = "SELECT moviePosterURL, movieName FROM movie ORDER BY movieID DESC LIMIT 5;";
+                $call_new = mysqli_query($connect, $query_new);
+
+                $movies = [];
+
+                if ($call_new) 
+                {
+                    while ($result_new = mysqli_fetch_assoc($call_new)) 
+                    {
+                        $movies[] = ["poster" => $result_new["moviePosterURL"], "title"  => $result_new["movieName"]];
+                    }
+                }
+
+                while (count($movies) < 5) 
+                {
+                    $movies[] = ["poster" => "POSTER/movie1.png", "title"  => "More soon"];
+                }
+
+                foreach ($movies as $m) 
+                {
+                    echo '
+                        <div class="moviecard">
+                            <img src="' . $m["poster"] . '" alt="movie">
+                            <p class="movietitle">' . htmlspecialchars($m["title"]) . '</p>
+                        </div>';
+                }
+            ?>
         </div>
     </section>
 
-    <footer>
+    <!-- <footer>
         <div class="footerbox"></div>
-    </footer>
+    </footer> -->
+    
 </body>
 </html>

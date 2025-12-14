@@ -1,0 +1,179 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;  
+    padding: 6vh 2vw;
+    min-height: 80vh;
+    gap: 40px;
+}
+
+.textcontainer {
+    display: block;
+    color: white;
+    padding-left: 0;
+    flex-grow: 1;
+}
+
+
+.moviepicture {
+    width: 35vh;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.texttitle {
+    color: white;
+    font-size: clamp(30px, 6vw, 55px);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.moviedes p {
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0;
+}
+.moviedes strong {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ratingpricewrap {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ratingstext {
+    font-size: clamp(18px, 2vw, 24px);
+    padding-bottom: 10px;
+}
+
+.totalratingscount {
+    font-size: 0.7em;
+    color: #b0b0b0;
+}
+
+.ratingswrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.ratingswrap .imgstar {
+    padding: 0;
+    margin-right: 2px;
+    width: 4vh;
+    height: 4vh;
+}
+
+.rentalprice {
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: bold;
+    color: #0075FF;
+    margin: 0;
+    padding: 0;
+}
+
+.priceandbutton {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    justify-content: space-between; 
+    gap: 30px;
+}
+
+.addtocartbutton {
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    background-color: blue;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.addtocartbutton:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 1023px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3vh;
+        gap: 0;
+    }
+
+    .moviepicture {
+        width: 40vh;
+        height: auto;
+    }
+
+    .textcontainer {
+        padding: 0 4vh;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .texttitle {
+        text-align: center;
+    }
+
+    .moviedes {
+        text-align: left;
+        padding: 0 20px;
+    }
+    
+    .ratingswrap, .ratingstext {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .priceandbutton {
+        justify-content: center;
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .addtocartbutton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .moviepicture {
+        width: 60vw;
+    }
+    .texttitle {
+        font-size: 30px;
+    }
+    .ratingswrap .imgstar {
+        width: 3vh;
+        height: 3vh;
+    }
+    .addtocartbutton {
+        width: 100%;
+    }
+}

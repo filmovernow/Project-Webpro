@@ -1,76 +1,123 @@
 body {
-    margin: 0;
-    background-color: #000;
-    font-family: 'Inter', sans-serif;
-}
-
-header p {
-    color: white;
-    font-size: 50px;
-    font-weight: normal;
-    margin-left: 20vh;
-}
-
-.containner-white {
-    display: flex;
-    background-color: white;
-    color: black;
-    width: 140vh;
-    height: 60vh;
-    margin: 0 auto;
-}
-
-.containner-white p {
-    display: flex;
-    margin-left: 2vh;
-    margin-top: 2.5vh;
-    font-size: 50px;
-}
-
-.containner-black {
-    display: flex;
-    flex-direction: column;
     background-color: black;
     color: white;
-    width: 45vh;
-    height: 55vh;
-    margin-left: 2vh;
-    margin-top: 2.5vh;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.payment-option {
-    margin-left: 2vh;
-    margin-top: -3vh;
+body::-webkit-scrollbar {
+    display: none;
 }
 
-.containner-pic img {
-    position: relative;
-    width: 8vh;
-    height: auto;
-    margin-top: -3vh;
-    padding-left: 1vh;
-}
-
-.groupheader {
-    display: flex;
-    align-items: center;
-    gap: 8vh;
+.errorbox {
+    color: red;
+    padding: 10px 15px;
+    background: black;
+    border: 1px solid #440000;
+    margin-top: 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    z-index: 100;
 }
 
 .hidden {
     display: none;
 }
 
-h1 {
-    font-weight: normal;
-    font-size: 30px;
+.paymentwrapper {
+    max-width: 1000px; 
+    width: 95%;
+    margin: 0 auto;
+    padding: 30px 0 30px 0; 
+    color: white;
 }
 
-#truemoney-form {
+.paymenttitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.containerwhite {
+    display: flex;
+    background-color: white;
+    color: black;
+    width: 140vh;
+    min-height: 60vh;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.containerwhite p {
+    margin-left: 2vh;
+    margin-top: 2.5vh;
+    font-size: initial;
+}
+
+.containerblack {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    width: 45vh;
+    min-height: 55vh;
+    margin-left: 2vh;
+    margin-top: 2.5vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.whitetextcontainer {
+    flex-grow: 1;
+    padding: 2.5vh;
+}
+
+.paymentoption {
+    margin-left: 2vh;
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radiooption {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.containerpic img {
+    width: 8vh;
+    height: auto;
+    padding-left: 1vh;
+}
+
+.groupheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2vh;
+}
+
+.groupheader p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.paymentform {
+    padding: 2vh 0;
     margin-left: 2vh;
 }
 
-.summit {
+.submitbutton {
     background-color: #1BB66E;
     color: black;
     width: 20vh;
@@ -80,10 +127,10 @@ h1 {
     cursor: pointer;
     margin-top: 2vh;
     border-radius: 30px;
-    border: solid white;
+    border: none;
 }
 
-.edit {
+.editbutton {
     background-color: #DFDFDF;
     color: black;
     width: 20vh;
@@ -93,488 +140,299 @@ h1 {
     cursor: pointer;
     margin-top: 2vh;
     border-radius: 30px;
-    border: solid white;
+    border: none;
 }
 
-.button-group {
+.buttongroup {
     display: flex;
     gap: 2vh;
     justify-content: flex-end;
-    margin-left: 2vh;
+    padding-right: 5vh;
+    margin-top: 2vh;
 }
 
-#tel-number {
+.telnumber,
+.cardnumber,
+.cardholdername,
+.expirationmonth,
+.expirationyear,
+.cvv {
     background-color: white;
     border-radius: 10px;
-    border: solid #CFCFCF 0.1px;
+    border: solid #CFCFCF 1px;
     color: black;
-    width: 30vh;
     height: 5vh;
     font-size: 20px;
-    cursor: pointer;
     text-align: left;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
-#checkterm {
+.telnumber {
+    width: 30vh;
+}
+
+.checkterm {
     cursor: pointer;
-    margin-top: 30%;
+    margin-top: 2vh;
 }
 
-.containner-black-group {
+.containerblackgroup {
     display: flex;
     flex-direction: column;
     text-align: right;
     margin-top: 2vh;
 }
 
-.textcontainnerblack {
+.textcontainerblack {
     text-align: right;
-    padding-left: 5.5vh;
-    line-height: 2vh;
-    padding-top: 0vh;
+    padding-right: 2vh;
+    font-size: 35px;
+    line-height: 1;
+    margin: 0;
 }
 
-.containner-black .textcontainnerblack {
-    font-size: 50px;
-}
-
-.containner-black .textcontainnerblack2 {
+.containerblack .textcontainerblack2 {
     font-size: 40px;
-    padding-right: 4vh;
-    line-height: 2vh;
-    padding-top: 0vh;
-    display: inline-block;
-}
-
-.containner-black .text-term-black {
-    font-size: 15px;
-    text-align: right;
-    padding-top: 30vh;
-    padding-left: 10.5vh;
+    padding-right: 2vh;
+    line-height: 1;
+    margin: 0;
+    margin-top: 1vh;
+    font-weight: bold;
 }
 
 .imgqr {
     width: 50vh;
-    align-items: center;
-    margin-left: 22.5%;
+    display: block;
+    margin: 0 auto;
 }
 
-#checkterm2 {
-    cursor: pointer;
-    margin-top: 1%;
-    margin-left: 2vh;
-}
-
-#checkterm3 {
-    cursor: pointer;
-    margin-top: 9.5%;
-    margin-left: 2vh;
-}
-
-#tel-number2 {
+.cardnumber {
+    width: 100%;
+    margin-top: 10px;
     background-image: url("IMAGES/credit-card.png");
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: 10px center;
-    padding-left: 40px;
-    background-color: white;
-    border-radius: 10px;
-    border: solid #CFCFCF 0.1px;
-    color: black;
-    width: 40vh;
-    height: 5vh;
-    font-size: 15px;
-    cursor: pointer;
-    text-align: left;
-    transform: translateY(30%);
-    margin-left: 3.5vh;
+    padding-left: 45px;
 }
 
-#tel-number3 {
-    background-color: white;
-    border-radius: 10px;
-    border: solid #CFCFCF 0.1px;
-    color: black;
-    width: 40vh;
-    height: 5vh;
-    font-size: 15px;
-    cursor: pointer;
-    text-align: left;
-    transform: translateY(30%);
-    margin-left: 6.9vh;
+.cardholdername {
+    width: 100%;
+    margin-top: 10px;
 }
 
-#tel-number4,
-#tel-number5,
-#tel-number6 {
-    background-color: white;
-    border-radius: 10px;
-    border: solid #CFCFCF 0.1px;
-    color: black;
-    width: 5vh;
-    height: 5vh;
-    font-size: 15px;
-    cursor: pointer;
+.expirationmonth,
+.expirationyear,
+.cvv {
+    width: 8vh;
     text-align: center;
-    transform: translateY(30%);
+    font-size: 18px;
+    margin-top: 10px;
 }
 
-#tel-number4 {
-    margin-left: 8vh;
+.smalltext2 {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
 }
 
-#tel-number5 {
-    margin-left: 3vh;
-}
-
-#tel-number6 {
-    margin-left: 0vh;
-}
-
-.small-text2 {
-    font-size: 30px;
-}
-
-.very-small-text2 {
+.verysmalltext2 {
     font-weight: normal;
     color: #5E5E5E;
-    font-size: 1.5vh;
+    font-size: 14px;
+    margin: 5px 0 15px 0;
+    line-height: 1.2;
 }
 
-.group1 h1 {
-    margin: 2vh 0 0 2vh;
-    display: flex;
-    align-items: center;
-    gap: 2vh;
+.group1 {
+    margin-bottom: 10px;
 }
 
-.group1 h2 {
-    margin: 0 0 0 2vh;
-}
-
-.exp-group {
+.expgroup {
     display: flex;
     align-items: center;
     gap: 1vh;
-    margin-left: 2vh;
 }
 
 .slash {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 25px;
-    height: 5vh;
-    margin-left: 14.8vh;
-    margin-top: 3vh;
+    font-weight: bold;
 }
 
-.biggroup-row {
+.biggrouprow {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    gap: 3vh;
     width: 100%;
     margin-top: 2vh;
 }
 
-.footerbox {
-    margin-top: 9.7vh;
-    width: 100%;
-    height: 64px;
-    background: rgba(35, 35, 35, 0.8);
+.biggrouprow .group1 {
+    flex: 1;
 }
 
-
 @media (max-width: 1024px) and (min-width: 481px) {
-
     header p {
         font-size: 35px;
         margin-left: 4vh;
     }
 
-    .containner-white {
+    .containerwhite {
         flex-direction: column;
         width: 90%;
-        height: auto;
+        min-height: auto;
     }
 
-    .containner-black {
+    .containerblack {
         width: 90%;
-        height: auto;
-        margin: 0 auto;
-        margin-top: 2vh;
-        padding: 1vh 0;
+        min-height: auto;
+        margin: 2vh auto;
+        padding: 2vh;
     }
 
-    .containner-black .textcontainnerblack {
-        font-size: 50px;
-        text-align: right;
-        margin-right: 2vh;
-        display: block;
-    }
-
-    .containner-black .textcontainnerblack2 {
+    .containerblack .textcontainerblack {
         font-size: 40px;
-        margin-right: -2vh;
         text-align: right;
     }
 
-    .containner-black .text-term-black {
-        font-size: 12px;
+    .containerblack .textcontainerblack2 {
+        font-size: 30px;
         text-align: right;
-        padding-top: 1vh;
-        transform: translateX(-3vh);
-        white-space: nowrap;
-        flex-direction: column;
     }
 
     .groupheader {
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 2vh 0;
         padding: 0 2vh;
     }
 
     .groupheader p {
-        font-size: 32px;
-        font-weight: bold;
+        font-size: 28px;
     }
 
-    .containner-pic img {
+    .containerpic img {
         width: 6vh;
-        margin: 0;
+    }
+    
+    .paymentform {
+        margin-left: 0;
+        padding: 2vh;
     }
 
-    .payment-option {
-        margin-left: 3vh;
-        font-size: 24px;
+    .telnumber {
+        width: 70%;
     }
 
-    #tel-number {
-        width: 40%;
-        font-size: 20px;
-    }
-
-    #tel-number2,
-    #tel-number3 {
-        width: 40%;
-        font-size: 20px;
-        transform: translateX(2vh);
-    }
-
-    #tel-number4,
-    #tel-number5,
-    #tel-number6 {
-        width: 12%;
-        font-size: 20px;
-        transform: translateX(2vh);
-    }
-
-    .small-text2 {
-        font-size: 24px;
-        font-weight: bold;
-        padding-left: 2vh;
-    }
-
-    .small-text {
-        font-size: 24px;
-        font-weight: bold;
-        padding-left: 2vh;
-    }
-
-    .very-small-text2 {
-        font-size: 14px;
-        padding-left: 2vh;
-    }
-
-    .slash {
-        font-size: 30px;
-        margin-left: 16.5vh;
-        margin-top: 0vh;
-    }
-
-    .imgqr {
-        width: 50%;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .button-group {
-        justify-content: center;
-        gap: 2vh;
-        margin-top: 2vh;
-    }
-
-    .summit,
-    .edit {
-        width: 22vh;
-        height: 5vh;
-        font-size: 18px;
-    }
-
-    .footerbox {
-        margin-top: 26.5vh;
+    .cardnumber, .cardholdername {
         width: 100%;
-        height: 64px;
-        background: rgba(35, 35, 35, 0.8);
+    }
+
+    .biggrouprow {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .expirationmonth, .expirationyear, .cvv {
+        width: 15vh;
+    }
+
+    .buttongroup {
+        justify-content: center;
+        margin-top: 3vh;
+        padding-right: 0;
     }
 }
 
 @media (max-width: 480px) {
-
     header p {
         font-size: 22px;
         margin-left: 2vh;
     }
 
-    .containner-white {
+    .containerwhite {
         flex-direction: column;
         width: 95%;
-        height: auto;
+        min-height: auto;
     }
 
-    .containner-black {
+    .containerblack {
         width: 90%;
-        height: auto;
-        margin: 0 auto;
-        margin-top: 2vh;
-        padding: 1vh 0;
+        min-height: auto;
+        margin: 2vh auto;
+        padding: 1vh;
     }
 
-    .containner-black .textcontainnerblack {
-        font-size: 30px;
-        text-align: right;
-        margin-right: 2vh;
-        display: block;
+    .containerblack .textcontainerblack {
+        font-size: 25px;
     }
 
-    .containner-black .textcontainnerblack2 {
+    .containerblack .textcontainerblack2 {
         font-size: 20px;
-        margin-right: -2vh;
-        text-align: right;
-    }
-
-    .containner-black .text-term-black {
-        font-size: 12px;
-        text-align: right;
-        padding-top: 1vh;
-        transform: translateX(-3vh);
-        white-space: nowrap;
-        flex-direction: column;
     }
 
     .groupheader {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0vh;
+        padding: 0 1vh;
     }
 
     .groupheader p {
-        font-size: 30px;
-        font-weight: bold;
+        font-size: 25px;
     }
 
-    .containner-pic img {
-        display: inline-block;
+    .containerpic {
+        align-self: flex-end;
+    }
+    
+    .containerpic img {
         width: 5vh;
-        transform: translateX(26vh);
     }
 
-    .payment-option {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .small-text {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    #tel-number {
-        width: 50%;
-        font-size: 16px;
-    }
-
-    #tel-number2 {
-        width: 50%;
-        font-size: 16px;
-        transform: translateX(2vh);
+    .paymentform {
         margin-left: 0;
+        padding: 1vh;
     }
 
-    #tel-number3 {
-        width: 50%;
-        font-size: 16px;
-        transform: translateX(2vh);
-        margin-left: 2vh;
+    .telnumber {
+        width: 80%;
     }
 
-    #tel-number4 {
-        width: 20%;
-        font-size: 14px;
-        transform: translateX(2vh);
-        margin-left: 2vh;
+    .cardnumber, .cardholdername, 
+    .expirationmonth, .expirationyear, .cvv {
+        width: 100%;
+        margin-top: 5px;
     }
 
-    #tel-number5 {
-        width: 20%;
-        font-size: 14px;
-        transform: translateX(2vh);
+    .cardnumber {
+        padding-left: 45px;
     }
 
-    #tel-number6 {
-        width: 20%;
-        font-size: 14px;
-        transform: translateX(2vh);
-    }
-
-    .small-text2 {
-        font-size: 15px;
-        font-weight: bold;
-        display: flex;
-    }
-
-    .very-small-text2 {
-        font-size: 10px;
-    }
-
-    .slash {
-        margin-left: 16vh;
-        margin-top: 0vh;
-        transform: translateX(-5vh);
-    }
-
-    .biggroup-row {
+    .biggrouprow {
         flex-direction: column;
-        gap: 2vh;
+        gap: 10px;
+    }
+    
+    .expgroup input {
+        width: 15vh;
+    }
+    
+    .smalltext2, .verysmalltext2 {
+        font-size: 14px;
     }
 
     .imgqr {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
+        width: 90%;
     }
 
-    .button-group {
+    .buttongroup {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 1vh;
         margin: 2vh 0;
+        padding: 0;
     }
 
-    .summit,
-    .edit {
+    .submitbutton, .editbutton {
         width: 18vh;
         height: 4.5vh;
         font-size: 16px;
-    }
-
-    .footerbox {
-        margin-top: 29.5vh;
-        width: 100%;
-        height: 64px;
-        background: rgba(35, 35, 35, 0.8);
     }
 }

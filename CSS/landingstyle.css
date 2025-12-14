@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    background-color: #000;
+    background-color: black;
     font-family: 'Inter', sans-serif;
 }
 
@@ -30,65 +30,71 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 3vh;
-    padding-top: 3vh;
-    padding-right: 7vh;
+    margin-top: 5vh; 
+    padding-right: 7vh; 
     width: 100%;
 }
 
 .container .banner {
     width: 70vw;
-    height: 45vh;
-    max-height: 500px;
-    min-height: 30vh;
+    aspect-ratio: 3 / 1;
     border-radius: 20px;
     object-fit: cover;
-}
-
-.circlewrapper {
-    display: flex;
-    gap: 0.8vw;
-    margin-top: 1.5vh;
-    justify-content: center;
-}
-
-.circle {
-    width: clamp(6px, 1vw, 12px);
-    height: clamp(6px, 1vw, 12px);
-    border-radius: 50%;
-    background-color: gray;
 }
 
 .text {
     font-size: clamp(18px, 4vw, 40px);
     color: white;
     text-align: center;
-    margin-top: 5vh;
+    padding-top: clamp(50px, 5vh, 100px);
 }
 
-.moviepicturewrapper {
+.moviecardwrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 3vw;
     margin-top: 2vh;
+    height: 100%;
 }
 
-.moviepicture {
-    margin-top: 5vh;
-    width: clamp(120px, 15vw, 250px);
-    height: auto;
+.moviecard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(120px, 15vw, 200px);
+    margin-bottom: 50px;
 }
 
-.footerbox {
+.moviecard img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.movietitle {
+    font-size: 0.8em;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+    text-align: center;
+    padding-left: 0;
+    color: lightgrey;
+    transition: color 0.2s;
+    font-weight: normal;
+}
+
+/* .footerbox {
     margin-top: 10vh;
     width: 100%;
     height: 64px;
     background: rgba(35, 35, 35, 0.8);
-}
+} */
 
-
-@media (max-width: 1024px) and (min-width: 481px) {
+@media (max-width: 1023px) and (min-width: 481px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -138,17 +144,16 @@ body::-webkit-scrollbar {
         margin-top: 2vh;
     }
 
-    .moviepicturewrapper {
-        gap: 5vw;
+    .moviecardwrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 4vh;
     }
 
-    .moviepicture {
-        width: 40vw;
-    }
-
-    .circlewrapper {
-        padding-left: 0;
-        margin-top: 1vh;
+    .moviecardwrapper img {
+        width: 80vw;
+        max-width: 150px;
     }
 
     .h1break {

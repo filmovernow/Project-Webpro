@@ -1,0 +1,178 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.movielistcontainer {
+    max-width: 1500px; 
+    width: 95%;
+    margin: 0 auto;
+    padding: 6vh 2vw;
+}
+
+.title {
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.moviegrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.moviecard {
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    text-decoration: none;
+}
+
+.moviecard:hover {
+    transform: scale(1.1) translateY(15px);
+    z-index: 10;
+}
+
+.moviecard img {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.moviecard h3 {
+    font-size: 0.8em;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0;
+    text-align: center;
+    color: lightgrey;
+    transition: color 0.2s;
+    font-weight: normal;
+}
+
+.moviecard:hover h3 {
+    color: white;
+}
+
+.moviecard a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.notfound {
+    text-align: center;
+    color: white;
+    font-size: 1.5em; 
+    font-weight: 500;
+    padding: 100px 20px;
+    grid-column: 1 / -1; 
+}
+
+.paginationwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.paginationwrapper .disabled {
+    color: #555;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.paginationwrapper a, .paginationwrapper span {
+    text-decoration: none;
+    color: lightgrey;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1em;
+}
+
+.paginationwrapper .currentpage {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+
+.paginationwrapper a:hover:not(.disabled) {
+    background-color: #555;
+    color: white;
+}
+
+.paginationwrapper .arrow {
+    font-size: 1.2em;
+}
+
+@media (max-width: 1300px) {
+    .moviegrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1023px) {
+    .moviegrid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .movielistcontainer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .moviegrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .moviecard img {
+        max-width: 150px;
+        max-height: 225px;
+    }
+
+    .movielistcontainer h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .moviegrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .moviecard img {
+        max-width: 150px;
+        max-height: 225px;
+    }
+
+    .movielistcontainer {
+        padding: 10px 10px 40px 10px;
+    }
+}

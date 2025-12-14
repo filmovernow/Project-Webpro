@@ -1,0 +1,303 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.watchmoviewrapper {
+    max-width: 1400px;
+    width: 95%; 
+    margin: 0 auto;
+    padding: 20px 0 80px 0;
+}
+
+/* --- ส่วนหัวข้อและปุ่มย้อนกลับ (แทน headtext เดิม) --- */
+.watchmovieheader {
+    /* ใช้ Flexbox จัดเรียงชื่อหนัง (watchtitle) และปุ่มให้อยู่ในแถวเดียวกัน */
+    display: flex;
+    justify-content: space-between; /* ชิดซ้ายและขวา */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    width: 75%; /* ใช้ความกว้างเดียวกับเนื้อหาหลัก */
+    margin: 0 auto;
+    /* เปลี่ยนจาก headtext เดิม */
+}
+
+.watchtitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding: 30px 0; /* ปรับลด padding เพื่อให้ชิดปุ่ม */
+    width: auto;
+    margin: 0;
+}
+
+/* สไตล์ของปุ่มย้อนกลับ (คล้ายปุ่มใน basket.php) */
+.backtoinventory_linkheader {
+    text-decoration: none;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.backtoinventory_buttonheader {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.backtoinventory_buttonheader:hover {
+    background-color: darkgreen;;
+}
+
+.videoplayercontainer {
+    width: 75%;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9; 
+    margin: 20px auto 40px auto;
+    overflow: hidden;
+}
+
+.movieplayer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.detailssection {
+    padding-top: 20px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.ratingscore, .rectext {
+    text-align: center;
+    font-size: clamp(1.5em, 3vw, 2em);
+    font-weight: 500;
+    margin: 50px 0 15px 0; 
+}
+
+.ratingswrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    max-width: fit-content;
+    margin: 0 auto 20px auto;
+}
+
+.ratingstarbutton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.ratingstarbutton:hover {
+    transform: scale(1.1);
+}
+
+.imgstar {
+    justify-items: center;
+}
+
+.ratingswrap .imgstar {
+    width: clamp(25px, 4vw, 40px);
+    height: auto;
+    display: block;
+}
+
+.unratedtext {
+    font-size: 1em;
+    color: #999;
+    margin-left: 10px;
+}
+
+.recmoviecardwrapper { 
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 40px;
+}
+
+.recmoviecardwrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.recmoviecardwrapper::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+.recmoviecardwrapper::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+.recmoviecard {
+    flex-shrink: 0;
+    min-width: 150px; 
+    max-width: 180px; 
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    text-decoration: none;
+}
+
+.recmoviecard:hover {
+    transform: scale(1.1) translateY(15px);
+    z-index: 10;
+}
+
+.recmoviecard a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.recmoviecard .moviepicture {
+    width: 100%;
+    height: 250px;
+    border-radius: 4px;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.recmoviecard .movietitle {
+    font-size: 0.8em;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    text-align: center;
+    color: lightgrey;
+    transition: color 0.2s;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.recmoviecard:hover .movietitle {
+    color: white;
+}
+
+@media (max-width: 1300px) {
+
+    .recmoviecard {
+        min-width: 150px;
+        max-width: 150px;
+    }
+
+    .recmoviecard .moviepicture {
+        height: 225px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .videoplayercontainer {
+        width: 100%;
+    }
+
+    .detailssection {
+        padding-top: 0px;
+    }
+
+    .recmoviecardwrapper{
+        justify-content: flex-start;
+        padding-left: 5%;
+    }
+
+    .watchmoviewrapper {
+        width: 90%; 
+        padding-top: 10px;
+    }
+    
+    .watchmovieheader {
+        width: 100%;
+        padding: 0;
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .watchtitle {
+        padding: 15px 0 0 0; 
+        font-size: 2em;
+    }
+    
+    .backtoinventory_linkheader {
+        width: 100%;
+    }
+    
+    .backtoinventory_buttonheader {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ratingscore, .rectext {
+        font-size: 1.5em;
+    }
+
+    .ratingswrap .imgstar {
+        width: 28px;
+    }
+    
+    .recmoviecard{
+        min-width: 120px;
+        max-width: 120px;
+    }
+
+    .recmoviecard .moviepicture {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .videoplayercontainer {
+        width: 100%;
+    }
+
+    .detailssection {
+        padding-top: 0px;
+    }
+
+    .recmoviecardwrapper{
+        justify-content: flex-start;
+    }
+
+    .watchtitle {
+        font-size: 1.8em;
+    }
+
+    .ratingswrap .imgstar {
+        width: 24px;
+    }
+
+    .recmoviecard {
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+    .recmoviecard .moviepicture {
+        height: 150px;
+    }
+}

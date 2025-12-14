@@ -1,0 +1,174 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.moviecatalog {
+    padding: 20px;
+    padding-top: 30px;
+}
+
+.movierowsection {
+    margin-bottom: 30px;
+}
+
+.rowflexwrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 350px; 
+}
+
+.rowtitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.viewmore {
+    font-size: 0.6em;
+    color: lightgrey;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+.viewmore:hover {
+    color: white;
+}
+
+.movierowcontainer {
+    flex-grow: 1; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: 20px;
+    align-self: stretch;
+}
+
+.movierowcontainer::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbutton {
+    background: rgba(50, 50, 50, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 2em;
+    opacity: 0.3; 
+    transition: opacity 0.3s, background 0.3s;
+    min-width: 40px;
+    height: 300px;
+    align-self: flex-start;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.rowflexwrapper:hover .scrollbutton {
+    opacity: 0.5;
+}
+
+.scrollbutton:hover {
+    background: rgba(50, 50, 50, 1);
+}
+
+.scrollbutton.left {
+    border-radius: 8px;
+}
+
+.scrollbutton.right {
+    border-radius: 8px;
+}
+
+.moviecardwrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 15px;
+    height: 100%;
+}
+
+.moviecard {
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    text-decoration: none;
+}
+
+.moviecard:hover {
+    transform: scale(1.1) translateY(15px);
+    z-index: 10;
+}
+
+.movieposter {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+    display: block;
+    object-fit: cover;
+}
+
+.movietitle {
+    font-size: 0.8em;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+    text-align: center;
+    padding-left: 0;
+    color: lightgrey;
+    transition: color 0.2s;
+    font-weight: normal;
+}
+
+.moviecard:hover .movietitle {
+    color: white;
+}
+
+.moviespacer {
+    flex: 0 0 auto;
+    width: 105px;
+}
+
+@media (max-width: 1023px) {
+    .moviespacer {
+        width: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .moviecard {
+        width: 48%; 
+        margin-right: 5px;
+    }
+
+    .moviecard img {
+        max-width: 150px;
+        max-height: 225px;
+    }
+    
+    .moviecatalog {
+        padding: 10px;
+    }
+    
+    .movierowcontainer {
+        padding-left: 10px;
+    }
+
+    .scrollbutton {
+        display: none;
+    }
+}

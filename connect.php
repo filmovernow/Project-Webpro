@@ -1,9 +1,5 @@
 <?php
 
-if($open_connect != 1){
-    die(header('Location: login.php'));
-}
-
 $hostname = 'localhost';
 $username = 'root';
 $password = '';

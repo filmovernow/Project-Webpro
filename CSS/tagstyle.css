@@ -1,31 +1,39 @@
 body {
-    margin: 0;
-    background-color: #000;
+    background-color: black;
+    color: white;
     font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
 
-h1 {
+.tagwrapper { 
+    width: 95%;
+    margin: 0 auto;
+    padding: 30px 0 80px 0; 
     color: white;
-    padding-top: 10px;
-    padding-left: 2vw;
 }
 
-.tagslist {
+.tagtitle {
+    font-size: 2.5em;
+    padding-left: 2vw;
+    font-weight: bold;
+}
+
+.taglist {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 15px;
     list-style-type: none;
     text-align: center;
-    padding-top: 10px;
     padding-left: 2vw;
     padding-right: 2vw;
 }
 
-.tagitem {
+.taglist li {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -35,11 +43,20 @@ h1 {
     border-radius: 10px;
     height: clamp(50px, 10vw, 100px);
     font-size: clamp(14px, 2vw, 25px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.taglist a {
+    text-decoration: none;
+}
+
+.taglist a:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 480px) {
 
-.tagslist {
+.taglist {
     grid-template-columns: 1fr 1fr;
 }
 
