@@ -24,8 +24,7 @@
     
     <section>
         <p class="text">What's new</p>
-        <div class="moviecardwrapper">
-            <?php
+        <div class="moviecardwrapper"> <?php
                 require('connect.php');
 
                 $query_new = "SELECT moviePosterURL, movieName FROM movie ORDER BY movieID DESC LIMIT 5;";
@@ -37,20 +36,23 @@
                 {
                     while ($result_new = mysqli_fetch_assoc($call_new)) 
                     {
-                        $movies[] = ["poster" => $result_new["moviePosterURL"], "title"  => $result_new["movieName"]];
+                        $movies[] = ["poster" => $result_new["moviePosterURL"], "title" => $result_new["movieName"]];
                     }
                 }
 
                 while (count($movies) < 5) 
                 {
-                    $movies[] = ["poster" => "POSTER/movie1.png", "title"  => "More soon"];
+                    $movies[] = ["poster" => "POSTER/movie1.png", "title" => "More soon"];
                 }
 
                 foreach ($movies as $m) 
                 {
                     echo '
-                        <div class="moviecard">
-                            <img src="' . $m["poster"] . '" alt="movie">
+                        <div class="moviecard"> <img 
+                                class="moviepicture"  
+                                src="' . htmlspecialchars($m["poster"]) . '" 
+                                alt="' . htmlspecialchars($m["title"]) . '"
+                            >
                             <p class="movietitle">' . htmlspecialchars($m["title"]) . '</p>
                         </div>';
                 }

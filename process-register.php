@@ -46,12 +46,12 @@
             $query_username_account = "SELECT username FROM customer WHERE username = '$username'";
             $call_email_account = mysqli_query($connect, $query_email_account);
             $call_username_account = mysqli_query($connect, $query_username_account);
-            if(mysqli_num_rows($call_email_account) > 0)
+            if(mysqli_num_rows($call_username_account) > 0)
             {
                 header("Location: register.php?error=" . urlencode("ชื่อผู้ใช้นี้ถูกใช้งานแล้ว"));
                 die();
             }
-            elseif(mysqli_num_rows($call_username_account) > 0)
+            elseif(mysqli_num_rows($call_email_account) > 0)
             {
                 header("Location: register.php?error=" . urlencode("อีเมลนี้ถูกใช้งานแล้ว"));
                 die();
