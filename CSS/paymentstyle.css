@@ -35,15 +35,16 @@ body::-webkit-scrollbar {
 .paymentwrapper {
     max-width: 1000px; 
     width: 95%;
-    margin: 0 auto;
+    margin-left: 25vh;
     padding: 30px 0 30px 0; 
     color: white;
 }
 
-.paymenttitle {
-    font-size: 2.5em;
+.paymentwrapper .paymenttitle {
+    font-size: 3em;
     font-weight: bold;
     margin-bottom: 30px;
+
 }
 
 .containerwhite {
@@ -54,6 +55,8 @@ body::-webkit-scrollbar {
     min-height: 60vh;
     margin: 0 auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5vh;
+    position: relative;
 }
 
 .containerwhite p {
@@ -69,8 +72,10 @@ body::-webkit-scrollbar {
     color: white;
     width: 45vh;
     min-height: 55vh;
+    max-height: 90vh;
     margin-left: 2vh;
     margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -144,12 +149,14 @@ body::-webkit-scrollbar {
 }
 
 .buttongroup {
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+
     display: flex;
     gap: 2vh;
-    justify-content: flex-end;
-    padding-right: 5vh;
-    margin-top: 2vh;
 }
+
 
 .telnumber,
 .cardnumber,
@@ -184,10 +191,10 @@ body::-webkit-scrollbar {
     margin-top: 2vh;
 }
 
-.textcontainerblack {
+.containerblack .textcontainerblack {
     text-align: right;
     padding-right: 2vh;
-    font-size: 35px;
+    font-size: 50px;
     line-height: 1;
     margin: 0;
 }
@@ -282,6 +289,14 @@ body::-webkit-scrollbar {
         flex-direction: column;
         width: 90%;
         min-height: auto;
+        margin: 0 auto;
+    }
+
+    .paymentwrapper {
+    width: 95%;
+    margin-left: 2vh;
+    padding: 0; 
+    color: white;
     }
 
     .containerblack {
@@ -336,9 +351,9 @@ body::-webkit-scrollbar {
     }
 
     .buttongroup {
+        position: static;
         justify-content: center;
         margin-top: 3vh;
-        padding-right: 0;
     }
 }
 
@@ -346,6 +361,20 @@ body::-webkit-scrollbar {
     header p {
         font-size: 22px;
         margin-left: 2vh;
+    }
+
+    .paymentwrapper {
+    width: 95%;
+    margin-left: 5vh;
+    padding: 30px 0 30px 0; 
+    color: white;
+    }
+
+    .paymentwrapper .paymenttitle {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+
     }
 
     .containerwhite {
@@ -424,10 +453,9 @@ body::-webkit-scrollbar {
     }
 
     .buttongroup {
+        position: static;
         justify-content: center;
-        flex-wrap: wrap;
-        margin: 2vh 0;
-        padding: 0;
+        margin-top: 3vh;
     }
 
     .submitbutton, .editbutton {
