@@ -1,0 +1,466 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.errorbox {
+    color: red;
+    padding: 10px 15px;
+    background: black;
+    border: 1px solid #440000;
+    margin-top: 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.paymentwrapper {
+    max-width: 1000px; 
+    width: 95%;
+    margin-left: 25vh;
+    padding: 30px 0 30px 0; 
+    color: white;
+}
+
+.paymentwrapper .paymenttitle {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+
+.containerwhite {
+    display: flex;
+    background-color: white;
+    color: black;
+    width: 140vh;
+    min-height: 60vh;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5vh;
+    position: relative;
+}
+
+.containerwhite p {
+    margin-left: 2vh;
+    margin-top: 2.5vh;
+    font-size: initial;
+}
+
+.containerblack {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    width: 45vh;
+    min-height: 55vh;
+    max-height: 90vh;
+    margin-left: 2vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.whitetextcontainer {
+    flex-grow: 1;
+    padding: 2.5vh;
+}
+
+.paymentoption {
+    margin-left: 2vh;
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radiooption {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.containerpic img {
+    width: 8vh;
+    height: auto;
+    padding-left: 1vh;
+}
+
+.groupheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2vh;
+}
+
+.groupheader p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.paymentform {
+    padding: 2vh 0;
+    margin-left: 2vh;
+}
+
+.submitbutton {
+    background-color: #1BB66E;
+    color: black;
+    width: 20vh;
+    height: 5vh;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2vh;
+    border-radius: 30px;
+    border: none;
+}
+
+.editbutton {
+    background-color: #DFDFDF;
+    color: black;
+    width: 20vh;
+    height: 5vh;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2vh;
+    border-radius: 30px;
+    border: none;
+}
+
+.buttongroup {
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+
+    display: flex;
+    gap: 2vh;
+}
+
+
+.telnumber,
+.cardnumber,
+.cardholdername,
+.expirationmonth,
+.expirationyear,
+.cvv {
+    background-color: white;
+    border-radius: 10px;
+    border: solid #CFCFCF 1px;
+    color: black;
+    height: 5vh;
+    font-size: 20px;
+    text-align: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.telnumber {
+    width: 30vh;
+}
+
+.checkterm {
+    cursor: pointer;
+    margin-top: 2vh;
+}
+
+.containerblackgroup {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-top: 2vh;
+}
+
+.containerblack .textcontainerblack {
+    text-align: right;
+    padding-right: 2vh;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0;
+}
+
+.containerblack .textcontainerblack2 {
+    font-size: 40px;
+    padding-right: 2vh;
+    line-height: 1;
+    margin: 0;
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+.imgqr {
+    width: 50vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.cardnumber {
+    width: 100%;
+    margin-top: 10px;
+    background-image: url("IMAGES/credit-card.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 10px center;
+    padding-left: 45px;
+}
+
+.cardholdername {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.expirationmonth,
+.expirationyear,
+.cvv {
+    width: 8vh;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.smalltext2 {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.verysmalltext2 {
+    font-weight: normal;
+    color: #5E5E5E;
+    font-size: 14px;
+    margin: 5px 0 15px 0;
+    line-height: 1.2;
+}
+
+.group1 {
+    margin-bottom: 10px;
+}
+
+.expgroup {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+.slash {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.biggrouprow {
+    display: flex;
+    gap: 3vh;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.biggrouprow .group1 {
+    flex: 1;
+}
+
+@media (max-width: 1024px) and (min-width: 481px) {
+    header p {
+        font-size: 35px;
+        margin-left: 4vh;
+    }
+
+    .containerwhite {
+        flex-direction: column;
+        width: 90%;
+        min-height: auto;
+        margin: 0 auto;
+    }
+
+    .paymentwrapper {
+    width: 95%;
+    margin-left: 2vh;
+    padding: 0; 
+    color: white;
+    }
+
+    .containerblack {
+        width: 90%;
+        min-height: auto;
+        margin: 2vh auto;
+        padding: 2vh;
+    }
+
+    .containerblack .textcontainerblack {
+        font-size: 40px;
+        text-align: right;
+    }
+
+    .containerblack .textcontainerblack2 {
+        font-size: 30px;
+        text-align: right;
+    }
+
+    .groupheader {
+        padding: 0 2vh;
+    }
+
+    .groupheader p {
+        font-size: 28px;
+    }
+
+    .containerpic img {
+        width: 6vh;
+    }
+    
+    .paymentform {
+        margin-left: 0;
+        padding: 2vh;
+    }
+
+    .telnumber {
+        width: 70%;
+    }
+
+    .cardnumber, .cardholdername {
+        width: 100%;
+    }
+
+    .biggrouprow {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .expirationmonth, .expirationyear, .cvv {
+        width: 15vh;
+    }
+
+    .buttongroup {
+        position: static;
+        justify-content: center;
+        margin-top: 3vh;
+    }
+}
+
+@media (max-width: 480px) {
+    header p {
+        font-size: 22px;
+        margin-left: 2vh;
+    }
+
+    .paymentwrapper {
+    width: 95%;
+    margin-left: 5vh;
+    padding: 30px 0 30px 0; 
+    color: white;
+    }
+
+    .paymentwrapper .paymenttitle {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+
+    }
+
+    .containerwhite {
+        flex-direction: column;
+        width: 95%;
+        min-height: auto;
+    }
+
+    .containerblack {
+        width: 90%;
+        min-height: auto;
+        margin: 2vh auto;
+        padding: 1vh;
+    }
+
+    .containerblack .textcontainerblack {
+        font-size: 25px;
+    }
+
+    .containerblack .textcontainerblack2 {
+        font-size: 20px;
+    }
+
+    .groupheader {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1vh;
+    }
+
+    .groupheader p {
+        font-size: 25px;
+    }
+
+    .containerpic {
+        align-self: flex-end;
+    }
+    
+    .containerpic img {
+        width: 5vh;
+    }
+
+    .paymentform {
+        margin-left: 0;
+        padding: 1vh;
+    }
+
+    .telnumber {
+        width: 80%;
+    }
+
+    .cardnumber, .cardholdername, 
+    .expirationmonth, .expirationyear, .cvv {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .cardnumber {
+        padding-left: 45px;
+    }
+
+    .biggrouprow {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .expgroup input {
+        width: 15vh;
+    }
+    
+    .smalltext2, .verysmalltext2 {
+        font-size: 14px;
+    }
+
+    .imgqr {
+        width: 90%;
+    }
+
+    .buttongroup {
+        position: static;
+        justify-content: center;
+        margin-top: 3vh;
+    }
+
+    .submitbutton, .editbutton {
+        width: 18vh;
+        height: 4.5vh;
+        font-size: 16px;
+    }
+}

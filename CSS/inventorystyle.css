@@ -1,0 +1,221 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.inventorywrapper {
+    max-width: 1000px; 
+    width: 95%;
+    margin: 0 auto;
+    padding: 30px 0 80px 0; 
+    color: white;
+}
+
+.inventorytitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.movielistcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.movieitem {
+    display: flex;
+    background-color: #232323; 
+    border-radius: 8px;
+    padding: 15px;
+    gap: 20px;
+    align-items: center;
+}
+
+.inventoryposter {
+    width: 80px; 
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0; 
+}
+
+.moviedetails {
+    flex-grow: 1; 
+    padding-right: 20px; 
+}
+
+.movietitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.moviedesc {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+}
+
+.rentaldates p {
+    font-size: 0.8em;
+    margin: 2px 0;
+    color: white;
+}
+.rentaldates strong {
+    font-weight: normal;
+    color: lightgray;
+}
+
+.movieactions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    flex-shrink: 0; 
+    width: 200px; 
+    gap: 15px;
+}
+
+.ratingdisplay {
+    text-align: right;
+}
+.ratingtext {
+    font-size: 0.8em;
+    color: lightgrey;
+    margin: 0 0 5px 0;
+}
+.ratingstars {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.staricon {
+    width: 20px; 
+    height: 20px;
+    margin-left: 2px;
+}
+.unratedtext {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+}
+
+.playbuttonlink {
+    text-decoration: none;
+}
+.playbutton {
+    width: 150px; 
+    height: 40px;
+    background-color: green;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+    padding-right: 15px; 
+}
+
+.playbutton:hover {
+    background-color: darkgreen;
+}
+
+.nomovies {
+    text-align: center;
+    color: white;
+    font-size: 1.5em; 
+    font-weight: 500;
+    padding: 100px 20px;
+    grid-column: 1 / -1; 
+}
+
+.paginationwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: white; 
+}
+
+.paginationwrapper a, .paginationwrapper span {
+    text-decoration: none;
+    color: lightgrey;
+    padding: 8px 12px; 
+    margin: 0 4px; 
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.paginationwrapper .disabled {
+    color: #555;
+    background-color: transparent;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.paginationwrapper .currentpage {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+    cursor: default; 
+}
+
+.paginationwrapper a:hover:not(.disabled):not(.currentpage) { 
+    background-color: #555; 
+    color: white;
+}
+
+.paginationwrapper .arrow {
+    font-size: 1.2em;
+}
+
+@media (max-width: 480px) {
+    .movieitem {
+        flex-wrap: wrap; 
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .moviedetails {
+        flex-basis: calc(100% - 100px); 
+        padding-right: 0;
+    }
+    
+    .inventoryposter {
+        width: 70px;
+        height: 105px;
+    }
+
+    .movieactions {
+        width: 100%; 
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid #333;
+        margin-top: 10px;
+    }
+
+    .ratingdisplay {
+        text-align: left;
+    }
+    .ratingstars {
+        justify-content: flex-start;
+    }
+
+    .playbutton {
+        width: 120px;
+    }
+}
