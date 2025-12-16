@@ -17,26 +17,22 @@ body::-webkit-scrollbar {
     padding: 20px 0 80px 0;
 }
 
-/* --- ส่วนหัวข้อและปุ่มย้อนกลับ (แทน headtext เดิม) --- */
 .watchmovieheader {
-    /* ใช้ Flexbox จัดเรียงชื่อหนัง (watchtitle) และปุ่มให้อยู่ในแถวเดียวกัน */
     display: flex;
-    justify-content: space-between; /* ชิดซ้ายและขวา */
-    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
-    width: 75%; /* ใช้ความกว้างเดียวกับเนื้อหาหลัก */
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
     margin: 0 auto;
-    /* เปลี่ยนจาก headtext เดิม */
 }
 
 .watchtitle {
     font-size: 2.5em;
     font-weight: bold;
-    padding: 30px 0; /* ปรับลด padding เพื่อให้ชิดปุ่ม */
+    padding: 30px 0;
     width: auto;
     margin: 0;
 }
 
-/* สไตล์ของปุ่มย้อนกลับ (คล้ายปุ่มใน basket.php) */
 .backtoinventory_linkheader {
     text-decoration: none;
     flex-shrink: 0;
@@ -47,10 +43,10 @@ body::-webkit-scrollbar {
     background-color: green;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: clamp(3px, 2vh, 10px) clamp(5px, 4vw, 20px);
     border-radius: 25px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(5px, 2vw, 40px);
     font-weight: bold;
     transition: background-color 0.2s;
 }
@@ -90,10 +86,10 @@ body::-webkit-scrollbar {
 
 .ratingswrap {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
     gap: 5px;
-    justify-content: center;
-    max-width: fit-content;
     margin: 0 auto 20px auto;
 }
 
@@ -109,6 +105,13 @@ body::-webkit-scrollbar {
     transform: scale(1.1);
 }
 
+.stargroup {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 5px;
+}
+
 .imgstar {
     justify-items: center;
 }
@@ -119,10 +122,28 @@ body::-webkit-scrollbar {
     display: block;
 }
 
+.deleterating_btn {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s, border-color 0.2s;
+    height: fit-content;
+}
+
+.deleterating_btn:hover {
+    background-color: darkred;
+    border-color: darkred;
+}
+
 .unratedtext {
     font-size: 1em;
     color: #999;
-    margin-left: 10px;
 }
 
 .recmoviecardwrapper { 
@@ -233,24 +254,15 @@ body::-webkit-scrollbar {
     .watchmovieheader {
         width: 100%;
         padding: 0;
-        flex-direction: column; 
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
-    .watchtitle {
-        padding: 15px 0 0 0; 
+    .watchtitle { 
         font-size: 2em;
     }
     
-    .backtoinventory_linkheader {
-        width: 100%;
-    }
-    
-    .backtoinventory_buttonheader {
-        width: 100%;
-        text-align: center;
-    }
 
     .ratingscore, .rectext {
         font-size: 1.5em;
@@ -271,6 +283,13 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 480px) {
+    .watchmovieheader {
+        width: 100%;
+        padding: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
 
     .videoplayercontainer {
         width: 100%;
@@ -285,7 +304,7 @@ body::-webkit-scrollbar {
     }
 
     .watchtitle {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 
     .ratingswrap .imgstar {

@@ -184,26 +184,16 @@
                         <label for="checkterm" style="display: inline;">I agree to the terms and conditions of ONE BY ONE’s movie rental payment agreement.</label>
                     </div>
 
-                    <div class="truemoneyform paymentform">
+                    <div class="truemoneyform hidden paymentform">
                         <div class="inputgroup">
                             <label for="telnumber" class="smalltext">Phone Number:</label>
                             <input type="number" name="telnumber" class="telnumber" id="telnumber"
                                 placeholder="Enter phone number" value="<?= isset($_POST['telnumber']) ? htmlspecialchars($_POST['telnumber']) : '' ?>">
                         </div>
-                        
-                        <div class="buttongroup">
-                            <button type="button" class="editbutton" onclick="window.location.href='basket.php'">Edit Order</button>
-                            <button type="submit" name="submit-payment" class="submitbutton">Summit</button>
-                        </div>
                     </div>
-
+                    
                     <div class="promptpayform hidden paymentform">
                         <img src="IMAGES/promptpayQR.png" alt="promptpayQR" class="imgqr"><br>
-                        
-                        <div class="buttongroup">
-                            <button type="button" class="editbutton" onclick="window.location.href='basket.php'">Edit Order</button>
-                            <button type="submit" name="submit-payment" class="submitbutton">Summit</button>
-                        </div>
                     </div>
 
                     <div class="creditcardform hidden paymentform">
@@ -236,11 +226,11 @@
                                 <p class="verysmalltext2">3-digit code on the back of the card</p>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="buttongroup">
+                    <div class="buttongroup">
                             <button type="button" class="editbutton" onclick="window.location.href='basket.php'">Edit Order</button>
                             <button type="submit" name="submit-payment" class="submitbutton">Summit</button>
-                        </div>
                     </div>
                 </form>
 

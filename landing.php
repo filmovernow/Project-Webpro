@@ -24,7 +24,8 @@
     
     <section>
         <p class="text">What's new</p>
-        <div class="moviecardwrapper"> <?php
+        <div class="moviecardwrapper"> 
+            <?php
                 require('connect.php');
 
                 $query_new = "SELECT moviePosterURL, movieName FROM movie ORDER BY movieID DESC LIMIT 5;";

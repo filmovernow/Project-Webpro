@@ -73,12 +73,12 @@
                 AND r.expireDate >= NOW()
             ORDER BY 
                 r.rentalDate DESC
-            LIMIT {$limit} OFFSET {$offset}
-        ";
+            LIMIT {$limit} OFFSET {$offset}";
 
         $result = mysqli_query($connect, $sql);
     ?>
 
+    
     <main class="inventorywrapper">
         <h2 class="inventorytitle">คลังหนังของคุณ</h2>
 

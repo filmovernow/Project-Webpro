@@ -18,7 +18,7 @@ $movieID = (int)$_POST['movie_id'];
 $rentalID = (int)$_POST['rental_id'];
 $ratingStars = (int)$_POST['rating_stars'];
 
-if ($ratingStars < 1 || $ratingStars > 5) {
+if ($ratingStars < 0 || $ratingStars > 5) {
     header("Location: watchmovie.php?id={$movieID}&error=" . urlencode("คะแนนต้องอยู่ระหว่าง 1 ถึง 5"));
     exit();
 }
@@ -44,15 +44,20 @@ if (mysqli_num_rows($checkResult) === 0) {
 $existingRatingSql = "SELECT ratingID FROM rating WHERE rentalID = {$rentalID} AND movieID = {$movieID}";
 $existingResult = mysqli_query($connect, $existingRatingSql);
 
-if (mysqli_num_rows($existingResult) > 0) {
+if (mysqli_num_rows($existingResult) > 0 && $ratingStars == 0) {
+    $deleteSql = "DELETE FROM rating WHERE rentalID = {$rentalID} AND movieID = {$movieID}";
+    $querySuccess = mysqli_query($connect, $deleteSql);
+    $message = "ยกเลิกการให้คะแนนสำเร็จ";
+}
+else if (mysqli_num_rows($existingResult) > 0) {
     $updateSql = "UPDATE rating SET stars = {$ratingStars}, ratedDate = NOW() WHERE rentalID = {$rentalID} AND movieID = {$movieID}";
     $querySuccess = mysqli_query($connect, $updateSql);
-    $message = "อัปเดตคะแนนสำเร็จ!";
+    $message = "อัปเดตคะแนนสำเร็จ";
 } else {
     $insertSql = "INSERT INTO rating (rentalID, movieID, stars, ratedDate) 
                   VALUES ({$rentalID}, {$movieID}, {$ratingStars}, NOW())";
     $querySuccess = mysqli_query($connect, $insertSql);
-    $message = "บันทึกคะแนนสำเร็จ!";
+    $message = "บันทึกคะแนนสำเร็จ";
 }
 
 if ($querySuccess) {

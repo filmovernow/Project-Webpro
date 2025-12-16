@@ -116,21 +116,23 @@
                 <input type="hidden" name="movie_id" value="<?php echo $movieID; ?>">
                 <input type="hidden" name="rental_id" value="<?php echo $movieData['rentalID']; ?>">
                 
-                <?php for ($i = 1; $i <= 5; $i++): ?>
-                    <button type="submit" name="rating_stars" value="<?php echo $i; ?>" class="ratingstarbutton">
-                        <img 
-                            class="imgstar" 
-                            src="IMAGES/<?php echo ($i <= $fullStars) ? 'fullstar.png' : 'clearstar.png'; ?>" 
-                            alt="<?php echo $i; ?> Star"
-                            data-rating="<?php echo $i; ?>"
-                        >
-                    </button>
-                <?php endfor; ?>
-                
-                <?php if ($fullStars == 0): ?>
+                <div class="stargroup">
+                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                        <button type="submit" name="rating_stars" value="<?php echo $i; ?>" class="ratingstarbutton">
+                            <img 
+                                class="imgstar" 
+                                src="IMAGES/<?php echo ($i <= $fullStars) ? 'fullstar.png' : 'clearstar.png'; ?>" 
+                                alt="<?php echo $i; ?> Star"
+                                data-rating="<?php echo $i; ?>"
+                            >
+                        </button>
+                    <?php endfor; ?>
+                </div>
+                <?php if ($fullStars > 0): ?>
+                    <button type="submit" name="rating_stars" value="0" class="deleterating_btn">ยกเลิกการให้คะแนน</button>
+                <?php else: ?>
                     <p class="unratedtext">ยังไม่ได้ให้คะแนน</p>
                 <?php endif; ?>
-                
             </form>
 
             <h3 class="rectext">ภาพยนตร์แนะนำ</h3>
