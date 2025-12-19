@@ -1,4 +1,5 @@
-#Webpro Project: RentalMovie
+#Webpro Project
+#RentalMovie
 make sure you have 
 -Xampp Control Panel v3.3.0
 -MySQL
