@@ -1,18 +1,46 @@
-#Webpro Project
-#RentalMovie
-make sure you have 
--Xampp Control Panel v3.3.0
--MySQL
-Change port to another port to use phpMyAdmin
-by open config row MySQL in Xampp Control Panel and select my.ini
-change port exmaple 3306 to 3307 in [client] and [mysqld]
-and go to file path:xampp/phpMyAdmin/config.inc.php
-change $cfg['Servers'][$i]['port'] = '3306';
-to $cfg['Servers'][$i]['port'] = '3307';
-or don't have you can add it
-Next you Start Module ACtions
-- Apache and MySQL
-make sure module textbox is green background and you can connect to phpmyadmin by open admin next button from start button(MySQL)
-after you can connect to phpMyAdmin you can add sample data by use file onebyone.sql in DB file and insert this file to your phpMyAdmin
-after you have sample data in phpMyadmin you can register to this web by use http://localhost/Project_Web/register.php
-That all how to use My project Thank you to read at all :)
+# Webpro Project  
+## RentalMovie (OneByOne)
+
+### Requirements
+- XAMPP Control Panel v3.3.0  
+- MySQL  
+
+---
+
+### MySQL Port Configuration (phpMyAdmin)
+1. Open **XAMPP Control Panel**
+2. Click **Config** (MySQL) → `my.ini`
+3. Change port (example: `3306` → `3307`) in:
+   - `[client]`
+   - `[mysqld]`
+
+4. Go to file path: xampp/phpMyAdmin/config.inc.php
+5. Change (or add if not exists):
+```php
+$cfg['Servers'][$i]['port'] = '3307';
+```
+### Start XAMPP Modules:
+
+-Start Apache
+
+-Start MySQL
+
+Make sure both modules turn green
+
+You should now be able to access phpMyAdmin by clicking Admin next to MySQL or via browser. http://localhost/phpmyadmin/
+
+---
+
+### Import Sample Database
+
+Open phpMyAdmin
+
+Import SQL file: onebyone.sql (located in DB folder)
+
+Make sure sample data is successfully inserted
+
+---
+
+### Run the Project:
+
+Register an account at: http://localhost/Project_Web/register.php
