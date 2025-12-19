@@ -21,9 +21,9 @@ $cfg['Servers'][$i]['port'] = '3307';
 ```
 ### Start XAMPP Modules:
 
--Start Apache
+- Start Apache
 
--Start MySQL
+- Start MySQL
 
 Make sure both modules turn green
 
